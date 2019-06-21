@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Popover</title>
+    <link rel="stylesheet" href="https://use.typekit.net/vif1tfj.css">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(
+            function () {
+                setTimeout(function () {
+                    $(".popup").css("display", "block");
+                }, 3000);
+
+                $(".closebtn>a").click(function () {
+                    $(".popup").css("display", "none");
+                });
+                $(".closebtn>a").keydown(function (event) {
+                    console.log(event);
+                    if (event.which == 13) {
+                        event.preventDefault();
+                        $(this).click(); //This will trigger a click on the first <a> element.
+                    }
+                });
+                $(".popup").scroll(function (x) {
+                    pos = $(".outside-border").offset().top;
+                   // console.log($(".outside-border").offset());
+                    $(".chisel").css('top', (900 + pos / 2) + 'px');
+                    $(".shaving").css('top', (250 - pos) + 'px');
+                });
+            }
+        );
+    </script>
+</head>
+
+<body>
+    <div class="popup">
+        <div class="outside-border">
+            <div id="part1-wrap">
+                <div class="first-border"></div>
+                <header>
+                    <div class="closebtn"><a tabindex="0"><img src="./assets/Closebutton.png" alt="close" /></a></div>
+                    <div class="title-line1">
+                        YOU ARE CORDIALLY INVITED <br />
+                        TO THE LAUNCH
+                    </div>
+
+                    <div class="title-line2">
+                        of the
+                    </div>
+
+                    <div class="title-main">
+                        <div>NEW</div>
+                        <div id="company">COMPANY</div>
+                        <div>WEBSITE</div>
+                    </div>
+                </header>
+
+                <section class="middle-text">
+                    <div>
+                        Lorem ipsum dolor sit amet, vix suas liber conclusionemque eu. Ad quo esse purto eros, nemore
+                        volutpat ut quo, copiosae concludaturque nam in.
+                    </div>
+                    <img src="./assets/bar.png" alt="bar">
+                </section>
+
+                <section>
+                    <div class="title-list">AD EST ODIO NOSTER:</div>
+                    <div class="list">
+                        <ul>
+                            <li>Ex vis amet graeci accumsan</li>
+                            <li>Civibus iracundia quo ad</li>
+                            <li>Eu impetus feugiat civibus qui</li>
+                            <li>Mel in mucius argumentum, an accumsan petentium vim </li>
+                            <li>Vim at rationibus interesset</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+
+            <div id="part2-wrap">
+                <form>
+                    <div>GET YOUR FOOT IN THE DOOR.</div>
+                    <div>Know the moment our new website goes live.</div>
+
+                    <div>
+                        <input type="text" id="txtName" placeholder="Name">
+                        <input type="text" id="txtEmail" placeholder="Email">
+                        <button onclick="return false;">SUBMIT</button>
+                    </div>
+
+
+                    <div>
+                        <div class="inline-flex">
+                            <input type="checkbox" id="choose" name="choose">
+                            <div>
+                                <label for="choose">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+                                    odio.
+                                    Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna
+                                    nibh,
+                                    viverra non, semper suscipit, posuere a, pede. </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="second-border"></div>
+
+            </div>
+            
+            <div class="chisel">
+            </div>
+            <div class="shaving">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

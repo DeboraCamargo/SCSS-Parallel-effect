@@ -1,0 +1,420 @@
+@mixin primary-font {
+  font-family: futura-pt, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin secondary-font {
+  font-family: freight-display-pro, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin terciary-font {
+  font-family: myriad-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin FreightDisp-Pro-Semibold {
+  font-family: freight-display-pro, serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@mixin FreightDispProBookItalic {
+  font-family: freight-display-pro, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+body {
+  background-image: url("../assets/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+::placeholder {
+  color: black;
+  font-weight: 600;
+  padding-left: 10px;
+  font-size: 1.2rem;
+}
+
+.popup {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  //to scroll
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+.outside-border {
+  border: solid 1px white;
+  max-width: 1320px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (min-width: 577px) {
+    margin: 50px auto;
+    max-width: 767px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 10px;
+    margin: 100px auto;
+    max-width: 952px;
+  }
+
+  @media screen and (min-width: 1510px) {
+    margin: 100px 279px;
+    max-width: 100%;
+  }
+}
+
+#part1-wrap {
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+#part2-wrap {
+  padding-top: 55px;
+  padding-bottom: 50px;
+  background-color: #9f173d;
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+}
+
+header {
+  text-align: center;
+  position: relative;
+
+  .title-line1 {
+    @include primary-font;
+    font-size: 18pt;
+    letter-spacing: 0.1rem;
+    @media screen and (min-width: 1024px) {
+      font-size: 21pt;
+    }
+  }
+
+  .title-line2 {
+    @include FreightDispProBookItalic;
+
+    letter-spacing: 0.01rem;
+    margin: 15px;
+    font-size: 20pt;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 24pt;
+      margin: 30px;
+    }
+  }
+
+  .title-main div {
+    @include FreightDisp-Pro-Semibold;
+    letter-spacing: 0rem;
+    font-size: 35pt;
+    line-height: 30pt;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 70pt;
+      line-height: 60pt;
+    }
+  }
+
+  .title-main #company {
+    color: #9f173d;
+  }
+}
+
+section {
+  text-align: center;
+  &.middle-text {
+    div {
+      @include primary-font;
+      letter-spacing: 0.01rem;
+      font-size: 16pt;
+      padding: 44px 5px 25px 5px;
+      max-width: 578px;
+      display: inline-block;
+
+      @media screen and (min-width: 1024px) {
+        font-size: 23pt;
+        max-width: 920px;
+        padding: 88px 5px 50px 5px;
+      }
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .title-list {
+    @include primary-font;
+    padding-bottom: 7px;
+    padding-top: 20px;
+    font-size: 16pt;
+    letter-spacing: 0.1rem;
+
+    @media screen and (min-width: 768px) {
+        padding-bottom: 15px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding-bottom: 50px;
+      padding-top: 50px;
+      font-size: 21pt;
+    }
+  }
+
+  .list {
+    display: block;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+      display: inline-block;
+      padding-bottom: 36px;
+    }
+  }
+
+  li {
+    @include terciary-font;
+    font-size: 14pt;
+    line-height: 22pt;
+    letter-spacing: 0.01rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 21pt;
+      line-height: 32pt;
+    }
+  }
+
+  ul {
+    text-align: left;
+    list-style: none;
+    margin: 0;
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: #9f173d;
+    display: inline-block;
+    width: 0.9rem;
+    margin-left: -1rem;
+  }
+}
+
+form {
+  color: #ffffff;
+  text-align: center;
+  > div:nth-child(1) {
+    @include FreightDisp-Pro-Semibold;
+    font-size: 18pt;
+    letter-spacing: 0.025rem;
+    line-height: 21pt;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 25pt;
+    }
+  }
+
+  > div:nth-child(2) {
+    @include primary-font;
+    font-size: 12pt;
+    letter-spacing: 0.01rem;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 18pt;
+    }
+  }
+
+  > div:nth-child(3) {
+    @include primary-font;
+    font-size: 15pt;
+    letter-spacing: 0.01rem;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @media screen and (min-width: 1024px) {
+      font-size: 23pt;
+    }
+  }
+
+  input[type="text"] {
+    width: 14.875rem;
+    height: 2.58rem;
+    @include primary-font;
+
+    @media screen and (min-width: 1024px) {
+      width: 17.875rem;
+      height: 3.58rem;
+    }
+  }
+
+  button {
+    background-color: black;
+    color: white;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    @include FreightDisp-Pro-Semibold;
+    font-size: 16pt;
+
+    margin-top: 10px;
+    height: 2.58rem;
+    width: 8.625rem;
+
+    @media screen and (min-width: 1024px) {
+      height: 3.58rem;
+      width: 8.625rem;
+    }
+  }
+
+  > div:nth-child(4) {
+    @include primary-font;
+
+    letter-spacing: 0.01rem;
+    color: #febed5;
+    display: inline-block;
+    font-size: 10pt;
+    line-height: 10pt;
+    max-width: 300px;
+    padding-bottom: 50px;
+    
+
+
+    @media screen and (min-width: 768px){
+        font-size: 13pt;
+        max-width: 500px;
+
+    }
+
+    @media screen and (min-width: 992px) {
+        max-width: 550px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      line-height: 16pt;
+      max-width: 580px;
+      padding-bottom: 100px;
+    }
+
+    .inline-flex {
+      display: flex;
+
+      input[type="checkbox"] {
+        height: 0.938rem;
+        width: 0.938rem;
+        color: #ffffff;
+        align-self: flex-start;
+      }
+
+      div {
+        flex: 1;
+        text-align: left;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.chisel {
+  background-image: url("../assets/chisel.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 350px;
+  width: 350px;
+  z-index: 10;
+  top: 900px;
+  left: -280px;
+  transition: top 0.5s;
+  display: none;
+  @media screen and (min-width: 1510px) {
+    display: block;
+  }
+}
+
+.shaving {
+  background-image: url("../assets/shaving.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  z-index: 10;
+  top: 250px;
+  right: -80px;
+  transition: top 0.7s;
+  display: none;
+  @media screen and (min-width: 1510px) {
+    display: block;
+  }
+}
+
+.first-border {
+  border: solid 10px #f5f5f5;
+  width: 180px;
+  height: 560px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin: -98px;
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.second-border {
+  border: solid 10px #f5f5f5;
+  width: 180px;
+  height: 90px;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  margin-left: -98px;
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.closebtn {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  z-index: 10;
+  top: -10;
+  right: 10px;
+
+  @media screen and (min-width: 577px) {
+    top: -1;
+  }
+
+  @media screen and (min-width: 1200px) {
+    top: -15px;
+    right: 50px;
+  }
+}
+
